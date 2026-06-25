@@ -3,8 +3,6 @@ package io.github.devhonorio.acesso_API.adapter.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,23 +10,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@AllArgsConstructor
+@Table(name = "tb_pessoa")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "tb_usuario")
-public class UsuarioEntity {
+public class PessoaEntity {
 
     @Id
     @GeneratedValue
     private Long id;
     private String nome;
-    private String email;
-    private String senha;
-    private Boolean administrador;
-
-    @OneToOne
-    @JoinColumn(name = "pessoa_id")
-    private PessoaEntity pessoaEntity;
 
 }

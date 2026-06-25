@@ -16,19 +16,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "tb_usuario")
-public class UsuarioEntity {
+@Table(name = "tb_morador")
+public class MoradorEntity {
 
     @Id
     @GeneratedValue
     private Long id;
-    private String nome;
-    private String email;
-    private String senha;
-    private Boolean administrador;
+    private String CPF;
+    private String endereco;
+    private String celular;
 
-    @OneToOne
+    @OneToOne(cascade=jakarta.persistence.CascadeType.PERSIST)
     @JoinColumn(name = "pessoa_id")
-    private PessoaEntity pessoaEntity;
-
+    private PessoaEntity pessoa;
 }

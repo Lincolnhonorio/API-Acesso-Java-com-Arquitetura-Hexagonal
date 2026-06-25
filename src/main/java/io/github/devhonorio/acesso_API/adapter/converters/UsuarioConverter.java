@@ -3,6 +3,7 @@ package io.github.devhonorio.acesso_API.adapter.converters;
 import org.springframework.stereotype.Component;
 
 import io.github.devhonorio.acesso_API.adapter.dtos.UsuarioDto;
+import io.github.devhonorio.acesso_API.domain.Pessoa;
 import io.github.devhonorio.acesso_API.domain.Usuario;
 
 @Component
@@ -14,7 +15,8 @@ public class UsuarioConverter {
                 usuarioDto.getNome(),
                 usuarioDto.getEmail(),
                 usuarioDto.getSenha(),
-                usuarioDto.getAdministrador()
+                usuarioDto.getAdministrador(),
+                new Pessoa(null,usuarioDto.getNome())
         );
     }
 

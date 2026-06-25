@@ -1,11 +1,11 @@
 package io.github.devhonorio.acesso_API.domain;
 
 public class Pessoa {
-    private int id;
+    private Long id;
 
     private String nome;
 
-    public Pessoa(int id, String nome) {
+    public Pessoa(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -13,11 +13,11 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

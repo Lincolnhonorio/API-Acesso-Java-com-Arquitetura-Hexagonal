@@ -15,6 +15,10 @@ public class UsuarioService implements UsuarioServicePort {
 
     @Override
     public Usuario createUsuario(Usuario usuario) {
+        Usuario usuarioExistente = usuarioRepositoryPort.obtainByEmail(usuario.getEmail());
+        if(usuarioExistente != null){
+            throw new RuntimeException("Usuário duplicado");
+        }
         return usuarioRepositoryPort.create(usuario);
     }
 

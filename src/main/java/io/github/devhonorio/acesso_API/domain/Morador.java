@@ -1,36 +1,36 @@
 package io.github.devhonorio.acesso_API.domain;
 
 public class Morador {
-    private int id;
-    private int CPF;
+    private Long id;
+    private String CPF;
     private String endereco;
-    private int celular;
-    private int idPessoa;
+    private String celular;
+    private Pessoa pessoa;
 
-    public Morador(int id, int CPF, String endereco, int celular, int idPessoa) {
+    public Morador(Long id, String CPF, String endereco, String celular, Pessoa pessoa) {
         this.id = id;
         this.CPF = CPF;
         this.endereco = endereco;
         this.celular = celular;
-        this.idPessoa = idPessoa;   
+        this.pessoa = pessoa;
     }
 
     public Morador() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }       
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
@@ -42,20 +42,20 @@ public class Morador {
         this.endereco = endereco;
     }
     
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
 
-    public int getIdPessoa() {
-        return idPessoa;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setIdPessoa(int idPessoa) {
-        this.idPessoa = idPessoa;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
 }
